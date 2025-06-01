@@ -3,29 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Garis Waktu - Ulang Tahun</title>
+  <title>Garis Waktu Ulang Tahun</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="container">
     <h1>Garis Waktu Kehidupan</h1>
-    <p>Di antara setiap detik yang berlalu, ada cerita yang tersimpan.  
-    Hari ini, aku ingin berbagi sepotong garis waktu hidupku denganmu...</p>
 
     <div class="timeline">
-      <div class="timeline-item">
-        <h2>Awal Cerita</h2>
-        <p>Sebuah langkah kecil, tangis pertama, awal dari segalanya.</p>
+
+      <div class="bait">
+        <img src="foto1.jpg" alt="Momen 1">
+        <p>Di awal cerita, aku hanyalah tangis kecil di pelukan ibu.</p>
       </div>
-      <div class="timeline-item">
-        <h2>Mimpi dan Harapan</h2>
-        <p>Setiap mimpi, meski kecil, adalah bahan bakar bagi perjalanan panjang ini.</p>
+
+      <div class="bait">
+        <img src="foto2.jpg" alt="Momen 2">
+        <p>Langkah pertama, jatuh dan bangun, belajar mengenal dunia.</p>
       </div>
-      <div class="timeline-item">
-        <h2>Hari Ini</h2>
-        <p>Di hari ulang tahun ini, aku ingin mendengar suaramu. Kirimkan ucapanmu di bawah ini.</p>
+
+      <div class="bait">
+        <img src="foto3.jpg" alt="Momen 3">
+        <p>Riang tawa di halaman rumah, tanpa tahu apa arti rindu.</p>
       </div>
+
+      <div class="bait">
+        <img src="foto4.jpg" alt="Momen 4">
+        <p>Waktu berjalan, aku tumbuh, mencoba memahami arti luka.</p>
+      </div>
+
+      <div class="bait">
+        <img src="foto5.jpg" alt="Momen 5">
+        <p>Di persimpangan, aku menunggu, mencari arah langkahku.</p>
+      </div>
+
+      <div class="bait">
+        <img src="foto6.jpg" alt="Momen 6">
+        <p>Kata-kata pertama yang kutulis, menorehkan mimpi-mimpi.</p>
+      </div>
+
+      <div class="bait">
+        <img src="foto7.jpg" alt="Momen 7">
+        <p>Matahari terbit dan terbenam, mengajariku tentang waktu.</p>
+      </div>
+
+      <div class="bait">
+        <img src="foto8.jpg" alt="Momen 8">
+        <p>Di hari ini, aku merenung, tentang siapa aku dan akan ke mana.</p>
+      </div>
+
+      <div class="bait">
+        <img src="foto9.jpg" alt="Momen 9">
+        <p>Terima kasih untuk setiap detik yang menjadi bagian dari ceritaku.</p>
+      </div>
+
+      <div class="bait">
+        <img src="foto10.jpg" alt="Momen 10">
+        <p>Hari ini aku bertambah usia, aku ingin mendengar ucapanmu.</p>
+      </div>
+
     </div>
 
     <form id="wish-form">
@@ -35,9 +72,6 @@
     </form>
 
     <div id="wish-list" class="wish-list"></div>
-
-    <button id="playMusic" class="play-btn">Putar Musik 🎶</button>
-    <audio id="bg-music" src="lagu.mp3" loop></audio>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
