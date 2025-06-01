@@ -76,5 +76,22 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
+  <script>
+  const baits = document.querySelectorAll(".bait");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // Hanya jalankan sekali
+      }
+    });
+  }, { threshold: 0.2 });
+
+  baits.forEach(bait => {
+    observer.observe(bait);
+  });
+</script>
+
 </body>
 </html>
