@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garis Waktu - Ulang Tahun</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Garis Waktu Kehidupan</h1>
+    <p>Di antara setiap detik yang berlalu, ada cerita yang tersimpan.  
+    Hari ini, aku ingin berbagi sepotong garis waktu hidupku denganmu...</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h2>Awal Cerita</h2>
+        <p>Sebuah langkah kecil, tangis pertama, awal dari segalanya.</p>
+      </div>
+      <div class="timeline-item">
+        <h2>Mimpi dan Harapan</h2>
+        <p>Setiap mimpi, meski kecil, adalah bahan bakar bagi perjalanan panjang ini.</p>
+      </div>
+      <div class="timeline-item">
+        <h2>Hari Ini</h2>
+        <p>Di hari ulang tahun ini, aku ingin mendengar suaramu. Kirimkan ucapanmu di bawah ini.</p>
+      </div>
+    </div>
+
+    <form id="wish-form">
+      <input type="text" id="name" placeholder="Nama kamu" required />
+      <textarea id="message" placeholder="Ucapan kamu..." required></textarea>
+      <button type="submit">Kirim Ucapan</button>
+    </form>
+
+    <div id="wish-list" class="wish-list"></div>
+
+    <button id="playMusic" class="play-btn">Putar Musik 🎶</button>
+    <audio id="bg-music" src="lagu.mp3" loop></audio>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
