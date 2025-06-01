@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ucapan Ulang Tahun</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio src="lagu.mp3" autoplay loop></audio>
+
+  <div class="container">
+    <img src="foto-ulang-tahun.jpg" alt="Selamat Ulang Tahun" class="birthday-img" />
+    <h1>Selamat Ulang Tahun 🎉</h1>
+    <p>Berikan ucapan spesialmu untuk yang berulang tahun!</p>
+
+    <form id="wish-form">
+      <input type="text" id="name" placeholder="Nama kamu" required />
+      <textarea id="message" placeholder="Ucapan kamu..." required></textarea>
+      <button type="submit">Kirim Ucapan</button>
+    </form>
+
+    <div id="wish-list" class="wish-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
