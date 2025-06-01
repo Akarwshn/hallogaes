@@ -35,11 +35,17 @@ async function loadWishes() {
 
 loadWishes();
 
-// Musik - Play setelah klik
-const audio = document.getElementById("bg-music");
-const playBtn = document.getElementById("playMusic");
+<script>
+  const audio = document.getElementById("bg-music");
+  const toggleBtn = document.getElementById("toggleMusic");
 
-playBtn.addEventListener("click", () => {
-  audio.play().catch(e => console.log(e));
-  playBtn.style.display = "none";
-});
+  toggleBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play().catch(e => console.log(e));
+      toggleBtn.textContent = "Matikan Musik 🎶";
+    } else {
+      audio.pause();
+      toggleBtn.textContent = "Putar Musik 🎵";
+    }
+  });
+</script>
