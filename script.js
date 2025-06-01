@@ -1,10 +1,9 @@
-// Supabase Setup (isi dengan URL & API Key kamu)
+// Supabase setup - ganti dengan URL dan API Key kamu
 const supabase = window.supabase.createClient(
-  'https://YOUR_SUPABASE_URL.supabase.co',
-  'YOUR_SUPABASE_PUBLIC_API_KEY'
+  "https://YOUR_SUPABASE_URL.supabase.co",
+  "YOUR_SUPABASE_PUBLIC_API_KEY"
 );
 
-// Form Ucapan
 document.getElementById("wish-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const nama = document.getElementById("name").value;
@@ -28,7 +27,7 @@ async function loadWishes() {
   if (data) {
     data.forEach((wish) => {
       const p = document.createElement("p");
-      p.textContent = `${wish.nama}: ${wish.ucapan}`;
+      p.textContent = `${wish.nama}: "${wish.ucapan}"`;
       list.appendChild(p);
     });
   }
@@ -36,22 +35,11 @@ async function loadWishes() {
 
 loadWishes();
 
-// Floating Hearts Animation
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (12 + Math.random() * 24) + "px";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 500);
-<script>
-  const audio = document.querySelector("audio");
-  const playBtn = document.getElementById("playMusic");
+// Musik - Play setelah klik
+const audio = document.getElementById("bg-music");
+const playBtn = document.getElementById("playMusic");
 
-  playBtn.addEventListener("click", () => {
-    audio.play();
-    playBtn.style.display = "none"; // Sembunyikan tombol setelah diklik
-  });
-</script>
+playBtn.addEventListener("click", () => {
+  audio.play().catch(e => console.log(e));
+  playBtn.style.display = "none";
+});
