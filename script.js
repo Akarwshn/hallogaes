@@ -46,3 +46,12 @@ setInterval(() => {
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 6000);
 }, 500);
+<script>
+  const audio = document.querySelector("audio");
+  const playBtn = document.getElementById("playMusic");
+
+  playBtn.addEventListener("click", () => {
+    audio.play();
+    playBtn.style.display = "none"; // Sembunyikan tombol setelah diklik
+  });
+</script>
