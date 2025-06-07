@@ -1,89 +1,136 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <button id="toggleMusic" class="play-btn">Putar Musik 🎵</button>
-<audio id="bg-music" src="lagu.mp3" loop></audio>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Garis Waktu Ulang Tahun</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .bait {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .bait.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bait img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #ff6f91;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .wish-list {
+      margin-top: 30px;
+      background-color: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    /* Meteor effect */
+    .stars, .meteor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .stars::before, .stars::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(-45deg, white, rgba(255,255,255,0));
+      animation: meteor 5s linear infinite;
+    }
+
+    @keyframes meteor {
+      0% {
+        transform: translate(-50vw, -50vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(100vw, 100vh);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
+  <button id="toggleMusic" class="play-btn">Putar Musik 🎵</button>
+  <audio id="bg-music" src="lagu.mp3" loop></audio>
+
+  <div class="stars"></div>
 
   <div class="container">
     <h1>Hujan Bulan Juni</h1>
 
     <div class="timeline">
-
-      <div class="bait">
+       <div class="bait">
         <img src="foto1.png" alt="Momen 1">
-        <p>"Bumi" mengorbit pada garis edarnya.
-          Diikuti planet-planet lain di sekitarnya.
-          Sang dewi matahari ,
-          menjadi pusat mobilisasi
-</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto2.png" alt="Momen 2">
-        <p>Merkurius berada pada urutan pertama,
-        dalam perlombaan menyerap cahaya</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto3.png" alt="Momen 3">
-        <p>Venus berada pada urutan ke-dua
-        dan menguntit merkurius di belakangnya.</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto4.png" alt="Momen 4">
-        <p> "Bumi" terpasrah pada
-          garis edarnya.
-          Menempati urutan ke-tiga
-          dalam perlombaan menyerap cahaya.
-</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto5.png" alt="Momen 5">
-        <p>Terkadang "Bumi" bertanya,
-          "Mengapa aku ditakdirkan 
-          pada urutan ke-tiga?.</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto6.png" alt="Momen 6">
-        <p>~Barangkali hidup adalah doa yang panjang~</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto7.png" alt="Momen 7">
-        <p>siidhflakdads.nchkdsmcancxbja </p>
-      </div>
-
-      <div class="bait">
-        <img src="foto8.png" alt="Momen 8">
-        <p>gavxuascacasjcxaiygdqiwhdgqhxvwhnjwkwkwkwkwk
-</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto9.png" alt="Momen 9">
         <p>gua mau ngucapin ribuan terima kasih buat orang orang baik 
           di sekeliling gua yang selalu memberikan affirmation dan bantuan,
           begitu pun untuk orang yang telah habis masanya, karena berkat
           itu semua gua jadi banyak dapat pelajaran serta menjadi
           sosok yang strongggg sampe sekarang dan seterusnya hehehe,
-          Sekali lagiiii, TERIMA KASIH BANYAK YAAAAAA!</p>
-      </div>
-
-      <div class="bait">
-        <img src="foto10.png" alt="Momen 10">
-        <p>~Aka Raushan Algathan~
+          Sekali lagiiii, TERIMA KASIH BANYAK YAAAAAA!
 </p>
       </div>
 
+      <div class="bait">
+        <img src="foto2.png" alt="Momen 2">
+        <p>~Aka Raushan Algathan~</p>
+      </div>       
     </div>
 
     <form id="wish-form">
@@ -96,23 +143,65 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js"></script>
   <script>
-  const baits = document.querySelectorAll(".bait");
+    const supabase = window.supabase.createClient(
+      "https://temlsgkkbdphwcyqrosm.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlbWxzZ2trYmRwaHdjeXFyb3NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2Mjg4MzYsImV4cCI6MjA2MjIwNDgzNn0.5I0s9ZrZfc0QXWgfY1JEUsVgNDoBMYEnDwHDDL5lKUo"
+    );
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target); // Hanya jalankan sekali
+    document.getElementById("wish-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nama = document.getElementById("name").value;
+      const ucapan = document.getElementById("message").value;
+
+      const { error } = await supabase.from("aka").insert([{ nama, ucapan }]);
+      if (!error) {
+        alert("Ucapan berhasil dikirim!");
+        document.getElementById("wish-form").reset();
+        loadWishes();
+      } else {
+        alert("Gagal menyimpan ucapan.");
+        console.error(error);
       }
     });
-  }, { threshold: 0.2 });
 
-  baits.forEach(bait => {
-    observer.observe(bait);
-  });
-</script>
+    async function loadWishes() {
+      const { data, error } = await supabase.from("aka").select("*").order("id", { ascending: false });
+      const list = document.getElementById("wish-list");
+      list.innerHTML = "";
+      if (data) {
+        data.forEach((wish) => {
+          const p = document.createElement("p");
+          p.textContent = `${wish.nama}: "${wish.ucapan}"`;
+          list.appendChild(p);
+        });
+      }
+    }
+    loadWishes();
 
+    const audio = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("toggleMusic");
+    toggleBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play().catch(e => console.log(e));
+        toggleBtn.textContent = "Matikan Musik 🎶";
+      } else {
+        audio.pause();
+        toggleBtn.textContent = "Putar Musik 🎵";
+      }
+    });
+
+    const baits = document.querySelectorAll(".bait");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    baits.forEach(bait => observer.observe(bait));
+  </script>
 </body>
 </html>
